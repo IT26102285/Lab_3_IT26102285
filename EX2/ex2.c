@@ -4,28 +4,20 @@ int main (void)
 
 
 {
-			float s;
-			float d;
-			float t;
-			float a;
-			float tspeed;
+			float v, v1, s, t, a;
 
-			printf("Enter takeoff speed(km/h): ");
-			scanf("%f",&s);
-			printf("Enter the distanc(meters): ");
-			scanf("%f",&d);
+	printf("Fighter jet's takeoff speed (km/hr): ");
+	scanf("%f", &v);
 
+	printf("Distance from rest to takeoff (meters): ");
+	scanf("%f", &s);
+	
+	v1 = v * (5/18.0);//v1=velocity in m/s
+	t = (2*s)/v1;
+	a = v1/t;
 
-			tspeed=s*1000/3600;
-			a=(tspeed*tspeed)/(2.0*d);
-			t=tspeed/a;
-
-
-			printf("Acceleration(m/s^2):%f\n",a);
-			printf("time(seconds):%f",t);
-
-			return 0;
-
+	printf("Acceleration : %.2f m/s^2\n",a);
+	printf("Time for the takeoff : %.2f s\n",t);
 
 }
 
